@@ -10,6 +10,7 @@ app.use(express.static('/public'));
 
 
 app.post('/', (req, res) => {
+  const query;
   const namespace_id = req.body.namespace_id;
   const data = req.body.message;
   if (namespace_id && data) {
