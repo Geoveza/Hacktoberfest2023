@@ -20,6 +20,7 @@ app.post('/', (req, res) => {
         console.error(error);
         res.status(500).send('Internal Server Error');
         return;
+        if(
       }
       try {
         const parsedOutput = JSON.parse(stdout);
@@ -32,7 +33,7 @@ app.post('/', (req, res) => {
           dataHex: data,
           signer,
           parsedOutput,
-        };
+        });
         console.log(result)
         res.status(200).send(JSON.stringify(result, null, 2))
       } catch (e) {
